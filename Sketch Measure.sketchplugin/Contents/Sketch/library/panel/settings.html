@@ -12,15 +12,14 @@
     <script type="text/javascript" src="assets/js/common.js"></script>
     <script type="text/javascript">
     <!--
-    var getDesignResolutionID = function(scale, unit,version){
+    var getDesignResolutionID = function(scale, unit){
             var scale = scale || 1,
-                unit = unit || 'px',
-                version=version||'';
+                unit = unit || 'px';
 
             scale = scale.toString().replace('.', '_');
             unit = unit.replace('/', '_');
 
-            var id = unit + '-' + scale;
+            id = unit + '-' + scale;
 
             if($('#' + id).length <= 0) return 'custom';
 
@@ -31,13 +30,11 @@
             if (id == 'custom') return false;
             var id = id.split('-'),
                 unit = id[0],
-                scale = id[1],
-                version = id[1];
+                scale = id[1];
 
             return {
                 scale: Number(scale.replace('_', '.')),
-                unit: unit.replace('_', '/'),
-                version: version.replace('_', '/')
+                unit: unit.replace('_', '/')
             }
         },
         checkResolution = function(DRID){
@@ -47,7 +44,6 @@
             SMAction('submit', {
                 scale: $('input[name=scale]').val(),
                 unit: $('input[name=unit]').val(),
-                version: $('input[name=version]').val(),
                 colorFormat: $('input[name=format]:checked').val()
             });
             console.log(window.location.hash)
@@ -87,10 +83,6 @@
                             '<input type="text" name="scale" value="2">',
                             '<label for="top">' + _('Scale') + '</label>',
                         '</div>',
-//                        '<div class="input-text mrb16">',
-//                            '<input type="text" name="version" value="1">',
-//                            '<label for="top">' + _('Version') + '</label>',
-//                        '</div>',
                         '<div class="input-text mrb24">',
                             '<input type="text" name="unit" value="dp/sp">',
                             '<label for="top">' + _('Unit') + '</label>',
@@ -117,10 +109,9 @@
             var data = $.extend({
                             scale: 1,
                             unit: 'px',
-                            version:1,
                             colorFormat: 'color-hex'
                         }, data),
-                id = getDesignResolutionID(data.scale, data.unit,data.version);
+                id = getDesignResolutionID(data.scale, data.unit);
              $('.resolution input').change(function(){
                 var $this = $(this),
                     id = $this.val(),
@@ -137,7 +128,6 @@
             if(id == 'custom'){
                 $('input[name=scale]').val(data.scale);
                 $('input[name=unit]').val(data.unit);
-                $('input[name=version]').val(data.version);
             }
 
             $('.selectbox').each(function(index){
@@ -199,12 +189,7 @@
             })
             .blur(function(){
                 var scale = $('input[name=scale]').val(),
-                    unit = $('input[name=unit]').val(),
-                    version = $('input[name=version]').val();
-                if(!version){
-                    $('input[name=version]').val(1);
-                }
-
+                    unit = $('input[name=unit]').val();
                 if(!scale){
                     $('input[name=scale]').val(1);
                 }
