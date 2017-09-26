@@ -44,6 +44,7 @@
             SMAction('submit', {
                 scale: $('input[name=scale]').val(),
                 unit: $('input[name=unit]').val(),
+                version: $('input[name=version]').val(),
                 colorFormat: $('input[name=format]:checked').val()
             });
             console.log(window.location.hash)
@@ -83,6 +84,10 @@
                             '<input type="text" name="scale" value="2">',
                             '<label for="top">' + _('Scale') + '</label>',
                         '</div>',
+                        '<div class="input-text mrb16">',
+                            '<input type="text" name="version" value="">',
+                            '<label for="top">' + _('Version') + '</label>',
+                        '</div>',
                         '<div class="input-text mrb24">',
                             '<input type="text" name="unit" value="dp/sp">',
                             '<label for="top">' + _('Unit') + '</label>',
@@ -109,6 +114,7 @@
             var data = $.extend({
                             scale: 1,
                             unit: 'px',
+                            version:'',
                             colorFormat: 'color-hex'
                         }, data),
                 id = getDesignResolutionID(data.scale, data.unit);
@@ -128,6 +134,7 @@
             if(id == 'custom'){
                 $('input[name=scale]').val(data.scale);
                 $('input[name=unit]').val(data.unit);
+                $('input[name=version]').val(data.version);
             }
 
             $('.selectbox').each(function(index){

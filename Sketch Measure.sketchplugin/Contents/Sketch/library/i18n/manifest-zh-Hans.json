@@ -180,8 +180,8 @@
     "identifier": "com.utom.measure",
     "appcast": "https://raw.githubusercontent.com/utom/sketch-measure/master/appcast.xml",
     "homepage": "http://utom.design/measure/",
-    "version": "2.6.12",
+    "version": "2.7.0",
     "description" : "Make it a fun to create spec for developers and teammates",
-    "authorEmail" : "utombox@gmail.com",
+    "authorEmail" : "seostart@qq.com",
     "name" : "Sketch Measure"
 }

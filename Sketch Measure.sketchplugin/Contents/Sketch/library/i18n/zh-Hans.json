@@ -25,6 +25,7 @@
     "Ubuntu Grid": "Ubuntu 网格",
     "Web View": "网页",
     "Scale": "倍率",
+    "Version": "版本号",
     "Unit": "单位",
     "Color format": "颜色格式",
     "Color hex": "色值",
@@ -99,4 +100,4 @@
     "Download": "下载",
     "Cancel": "取消",
     "Donate": "捐赠"
-};
+}
