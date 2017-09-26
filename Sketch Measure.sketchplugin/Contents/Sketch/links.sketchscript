@@ -3,7 +3,7 @@ function openURL(url){
   NSWorkspace.sharedWorkspace().openURL(nsurl)
 }
 
-function linkDonate(){
+function linkDonFate(){
   openURL('http://utom.design/measure/donate.html');
 }
 
