@@ -366,7 +366,8 @@ var I18N = {},
             this.events();
         },
         screen: function() {
-            var imageData = (this.current.imageBase64)? this.current.imageBase64: this.current.imagePath + '?' + timestamp;
+//            var imageData = (this.current.imageBase64)? this.current.imageBase64: this.current.imagePath + '?' + timestamp;
+            var imageData = (this.current.imageBase64)? this.current.imageBase64: this.current.imagePath;
 
             if(!this.maxSize){
                 var screenSize = (this.current.width > this.current.height)? this.current.width: this.current.height,
@@ -547,7 +548,8 @@ var I18N = {},
                 pagesData[artboard.pageObjectID].count++;
                 var classNames = (self.artboardIndex == index && !artboard.fileName)? ' active': '',
                     fileName = (artboard.fileName)? ' data-file="' + artboard.fileName + '"': '',
-                    imageData = (artboard.imageBase64)? artboard.imageBase64: artboard.imagePath + '?' + timestamp;
+//                    imageData = (artboard.imageBase64)? artboard.imageBase64: artboard.imagePath + '?' + timestamp;
+                imageData = (artboard.imageBase64)? artboard.imageBase64: artboard.imagePath;
                 artboardListHTML.push(
                         '<li id="artboard-' + index + '"' + fileName + ' class="artboard' + classNames + '" data-page-id="' + artboard.pageObjectID + '" data-id="' + artboard.objectID + '" data-index="' + index + '" >',
                             '<picture class="preview-img" data-name="' + artboard.name + '">',
