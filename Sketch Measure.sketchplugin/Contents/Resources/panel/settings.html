@@ -382,6 +382,7 @@ var formatData = [{
 
 var configs = {
 		scale: 1,
+        version:1,
 		units: 'px',
 		format: 'color-hex'
 };
@@ -407,6 +408,15 @@ var appVue = new Vue({
 						set: function set(newValue) {
 								var scale = Number(newValue.replace(/[^\d\.]/g, ''));
 								this.configs.scale = scale ? scale : 1;
+						}
+				},
+				version: {
+						get: function get() {
+								return this.configs.version;
+						},
+						set: function set(newValue) {
+								var version = Number(newValue.replace(/[^\d\.]/g, ''));
+								this.configs.version = version ? version : 1;
 						}
 				},
 				units: {

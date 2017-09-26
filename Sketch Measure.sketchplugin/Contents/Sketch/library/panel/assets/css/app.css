@@ -332,7 +332,7 @@ button{
 
 
 .options{
-    padding: 24px;
+    padding:10px 24px;
 }
 .options:after{
     content: '';
