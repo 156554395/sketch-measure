@@ -25,7 +25,7 @@ Make it fun to create specs for developers and teammates. **Sketch 41.* support*
 ## Installing Plugins
 
 ### Install from download
-1. [Download the ZIP file](https://github.com/utom/sketch-measure/archive/master.zip) and unzip
+1. [Download the ZIP file](https://github.com//156554395/sketch-measure/archive/master.zip) and unzip
 2. Open `Sketch Measure.sketchplugin`
 
 ### Install with Sketch Plugin Manager
